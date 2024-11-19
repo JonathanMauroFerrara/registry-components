@@ -39,6 +39,7 @@ const getComponentFiles = async (files: File[]) => {
       const fileContent = await fs.readFile(filePath, "utf-8");
       return {
         type: FolderToComponentTypeMap[
+          // @ts-ignore
           file.split("/")[0] as keyof typeof FolderToComponentTypeMap
         ],
         content: fileContent,
